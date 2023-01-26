@@ -1,4 +1,4 @@
-Run `yarn storybook` to see the component's stories at `http://localhost:6006`
+Run `yarn` and `yarn storybook` to see the component's stories at `http://localhost:6006`
 
 # Summary #
 Code test with the base test and extra credit 1 in separate branches of the repo.
