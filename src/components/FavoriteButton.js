@@ -15,12 +15,10 @@ export default function FavoriteButton({
   return (
     <div>
       <Button variant="contained" onClick={onClick}>
-        {!on && icons[0]}
-        {on && icons[1]}
+        {on ? icons[1] : icons[0]}
+        {on ? labels[1] : labels[0]}
 
-        {!on && labels[0]}
-        {on && labels[1]}
-        {(displayZeroCount || (!displayZeroCount && count != 0)) &&
+        {(displayZeroCount || count != 0) &&
           ": " + count}
       </Button>
     </div>
