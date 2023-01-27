@@ -14,3 +14,15 @@ DefaultContainer.args =
 {
   ...Default.args,
 };
+
+export const ContainerDisplayZero = Template.bind({});
+ContainerDisplayZero.args = {
+  ...DefaultContainer.args,
+  displayZeroCount: true
+}
+
+export const ContainerNonZeroCount = Template.bind({});
+ContainerNonZeroCount.args = {
+  ...DefaultContainer.args,
+  count: 12,
+}

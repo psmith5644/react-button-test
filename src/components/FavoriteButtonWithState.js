@@ -2,10 +2,18 @@ import React, { useState } from "react";
 import FavoriteButton from "./FavoriteButton";
 
 export default function FavoriteButtonWithState(props) {
-  const {on, ...other} = props;
-  // const [buttonOn, setButtonOn] = useState(on); // state currently unused
+  let {on, onClick, ...other} = props;
 
-  return <FavoriteButton on={on} {...other} />;
+  let setOn;
+  [on, setOn] = useState(on);
+
+  // Toggles button and passes state to callback
+  function handleClick() {
+    onClick(on);
+    setOn(!on);
+  }
+
+  return <FavoriteButton on={on} onClick={handleClick} {...other} />;
 
 }
 
