@@ -10,15 +10,15 @@ export default function FavoriteButton({
   icons,
   labels,
 }) {
+  const name = "FavoriteButton";
+
   return (
     <div>
-      <Button variant="contained" onClick={() => onClick()}>
-        {!on && icons[0]}
-        {on && icons[1]}
+      <Button variant="contained" onClick={onClick}>
+        {on ? icons[1] : icons[0]}
+        {on ? labels[1] : labels[0]}
 
-        {!on && labels[0]}
-        {on && labels[1]}
-        {(displayZeroCount || (!displayZeroCount && count != 0)) &&
+        {(displayZeroCount || count != 0) &&
           ": " + count}
       </Button>
     </div>
@@ -32,7 +32,7 @@ FavoriteButton.propTypes = {
   /** number of times this has been favorited */
   count: PropTypes.number,
 
-  /** display the number of favorites is that equals 0? */
+  /** display the number of favorites if that equals 0? */
   displayZeroCount: PropTypes.bool,
 
   /** Event, onClick handler */
