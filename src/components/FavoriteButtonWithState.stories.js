@@ -1,6 +1,6 @@
 import React from "react";
 import FavoriteButtonWithState from "./FavoriteButtonWithState";
-import { Default, On, ShowDisplayZero } from "./FavoriteButton.stories";
+import { Default } from "./FavoriteButton.stories";
 
 export default {
   component: FavoriteButtonWithState,
@@ -9,17 +9,16 @@ export default {
 
 const Template = (args) => <FavoriteButtonWithState {...args} />;
 
-export const DefaultWithState = Template.bind({});
-DefaultWithState.args = {
+export const DefaultWithStateAndLocalStorage = Template.bind({});
+DefaultWithStateAndLocalStorage.args = {
   ...Default.args,
+  fk: { type: "favBtn", id: "user1" },
 };
 
-export const OnWithState = Template.bind({});
-OnWithState.args = {
-  ...On.args,
-}
-
-export const ShowDisplayZeroWithState = Template.bind({});
-ShowDisplayZeroWithState.args = {
-  ...ShowDisplayZero.args,
-}
+export const ShowDisplayZeroWithStateAndLocalStorage = Template.bind({});
+ShowDisplayZeroWithStateAndLocalStorage.args = {
+  ...DefaultWithStateAndLocalStorage.args,
+  count: 0,
+  displayZeroCount: true,
+  fk: { type: "favBtn", id: "user2" },
+};

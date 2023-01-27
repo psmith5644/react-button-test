@@ -18,8 +18,7 @@ export default function FavoriteButton({
         {on ? icons[1] : icons[0]}
         {on ? labels[1] : labels[0]}
 
-        {(displayZeroCount || count != 0) &&
-          ": " + count}
+        {(displayZeroCount || count != 0) && ": " + count}
       </Button>
     </div>
   );
